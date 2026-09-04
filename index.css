@@ -599,6 +599,31 @@ img {
     color: #fff;
     border-color: var(--green);
 }
+.filter-pill {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--green);
+
+    border-radius: 999px;
+
+    padding: .55rem .95rem;
+
+    font-size: .62rem;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    font-family: inherit;
+}
+
+.filter-pill.active,
+.filter-pill:hover {
+    background: var(--green);
+    color: #fff;
+    border-color: var(--green);
+}
 
 /* =========================================================
    PRODUCT CARDS
