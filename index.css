@@ -157,11 +157,12 @@ img {
 .hero {
     background: var(--forest);
     padding: 2rem 0 0;
+
 }
 
 .hero-inner {
     background: var(--forest2);
-    min-height: 610px;
+    min-height: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: relative;
@@ -241,7 +242,7 @@ img {
 /* HERO IMAGE AREA */
 
 .hero-art {
-    min-height: 610px;
+    min-height: 500px;
     position: relative;
     display: flex;
     align-items: center;
@@ -270,7 +271,7 @@ img {
     object-position: center center;
     display: block;
     transform: scale(1.02);
-    animation: cinematicZoom 8s ease-in-out infinite alternate;
+    animation: cinematicZoom 3s ease-in-out infinite alternate;
 }
 
 @keyframes cinematicZoom {
@@ -849,37 +850,282 @@ img {
 }
 
 /* =========================================================
-   STORY
+   STORY SECTION - FINAL RESPONSIVE CSS
 ========================================================= */
 
 .story-feature {
+    width: 100%;
+    max-width: 100%;
     background: #ded5c5;
     border-radius: 28px;
     overflow: hidden;
 }
 
+.story-feature .row {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+}
+
+.story-feature .row > * {
+    min-width: 0;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
 .story-image {
-    min-height: 460px;
+    width: 50%;
+    max-width: 50%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
 }
 
 .story-image img {
-    width: 100%;
-    height: 100%;
+    display: block;
+    width: 470px;
+    max-width: 100%;
+    height: 476px;
     object-fit: cover;
+    object-position: center;
+    border-radius: 22px;
 }
 
+/* =========================
+   TEXT
+========================= */
+
 .story-copy {
-    padding: 3.5rem;
+    width: 60%;
+    max-width: 80%;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 45px;
+    margin: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.story-copy .eyebrow {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 12px;
 }
 
 .story-copy h3 {
+    width: 100%;
+    max-width: 650px;
+    min-width: 0;
     font-family: 'Playfair Display', serif;
-    font-size: 2.55rem;
+    font-size: clamp(2.3rem, 4vw, 3.15rem);
     line-height: 1.05;
-    margin: 1rem 0;
+    letter-spacing: -0.035em;
+    margin: 0 0 20px;
+    overflow-wrap: anywhere;
+}
+
+.story-copy p {
+    width: 100%;
+    max-width: 650px;
+    min-width: 0;
+    color: #667069;
+    font-size: .83rem;
+    line-height: 1.7;
+    margin: 0 0 18px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.story-copy p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .story-image {
+        justify-content: flex-start;
+    }
+
+    .story-image img {
+        width: 470px;
+        height: 476px;
+    }
+
+    .story-copy {
+        padding-left: 35px;
+        padding-right: 45px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+
+    .story-feature {
+        border-radius: 24px;
+    }
+
+    .story-image {
+        justify-content: center;
+    }
+
+    .story-image img {
+        width: 100%;
+        max-width: 420px;
+        height: 430px;
+        border-radius: 20px;
+    }
+
+    .story-copy {
+        padding: 35px 25px;
+    }
+
+    .story-copy h3 {
+        font-size: 2.4rem;
+    }
+
+    .story-copy p {
+        font-size: .78rem;
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .story-feature {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .story-feature .row {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .story-feature .row > [class*="col-"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        min-width: 0 !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* IMAGE */
+
+    .story-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 0;
+        padding: 0;
+        display: block;
+    }
+
+    .story-image img {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 18px;
+    }
+
+    /* TEXT */
+
+    .story-copy {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 25px 18px 30px;
+        display: block;
+        overflow: hidden;
+    }
+
+    .story-copy .eyebrow {
+        width: 100%;
+        max-width: 100%;
+        font-size: .58rem;
+        margin-bottom: 10px;
+    }
+
+    .story-copy h3 {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        font-size: clamp(1.9rem, 9vw, 2.6rem);
+        line-height: 1.05;
+        margin: 0 0 16px;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .story-copy p {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        font-size: .8rem;
+        line-height: 1.65;
+        margin: 0 0 15px;
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .story-feature {
+        border-radius: 16px;
+    }
+
+    .story-copy {
+        padding: 20px 15px 25px;
+    }
+
+    .story-copy h3 {
+        font-size: 1.85rem;
+    }
+
+    .story-copy p {
+        font-size: .76rem;
+        line-height: 1.6;
+    }
+
+    .story-image img {
+        border-radius: 15px;
+    }
 }
 
 .story-copy p,
@@ -1189,16 +1435,83 @@ img {
     border-radius: 16px;
 }
 
-.metric strong {
-    display: block;
-    font-size: 1.4rem;
+/* =========================================================
+   METRIC CARDS
+========================================================= */
+
+.metric {
+    background: #ffffff;
+    border: 1px solid rgba(10, 61, 46, .10);
+    border-radius: 18px;
+    padding: 28px 24px;
+
+    min-height: 190px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    box-shadow: 0 8px 25px rgba(10, 61, 46, .07);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
 }
 
+/* Hover effect */
+
+.metric:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(10, 61, 46, .12);
+    border-color: rgba(10, 61, 46, .18);
+}
+
+/* Large heading */
+
+.metric strong {
+    display: block;
+
+    color: var(--ink);
+
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    margin-bottom: 8px;
+}
+
+/* Small label */
+
 .metric span {
-    font-size: .65rem;
+    display: block;
+
+    color: var(--rust);
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
     text-transform: uppercase;
-    letter-spacing: .1em;
-    color: rgba(255,255,255,.48);
+
+    margin-bottom: 14px;
+}
+
+/* Description */
+
+.metric p {
+    margin: 0;
+
+    color: #59635c;
+
+    font-size: .82rem;
+
+    line-height: 1.65;
+
+    max-width: 100%;
 }
 
 .check-list {
@@ -2759,4 +3072,1508 @@ a,
     -webkit-user-select: none !important;
     user-select: none !important;
     cursor: pointer;
+}
+
+/* =========================================================
+   ABOUT PAGE STORY SECTION - FINAL FIX
+   HTML uses .story-image + .story-copy inside .row.g-5
+========================================================= */
+
+.section-shell.light-section > .container > .row.g-5.align-items-center {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    --bs-gutter-x: 2.5rem;
+    --bs-gutter-y: 0;
+}
+
+.section-shell.light-section > .container > .row.g-5.align-items-center > .story-image,
+.section-shell.light-section > .container > .row.g-5.align-items-center > .story-copy {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* DESKTOP */
+.section-shell.light-section > .container > .row.g-5.align-items-center > .story-image {
+    flex: 0 0 42%;
+    width: 42%;
+    max-width: 42%;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.section-shell.light-section > .container > .row.g-5.align-items-center > .story-copy {
+    flex: 0 0 58%;
+    width: 58%;
+    max-width: 58%;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 0;
+}
+
+.section-shell.light-section .story-image img {
+    width: 100% !important;
+    max-width: 340px !important;
+    height: 360px !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 20px;
+}
+
+.section-shell.light-section .story-copy h3 {
+    max-width: 620px;
+    margin: 0 0 18px;
+    font-size: clamp(2.2rem, 3.2vw, 3.1rem);
+    line-height: 1.05;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.section-shell.light-section .story-copy p {
+    max-width: 620px;
+    margin: 0 0 15px;
+    font-size: .82rem;
+    line-height: 1.7;
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .section-shell.light-section > .container > .row.g-5.align-items-center {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .section-shell.light-section > .container > .row.g-5.align-items-center > .story-image {
+        flex: 0 0 40%;
+        width: 40%;
+        max-width: 40%;
+    }
+
+    .section-shell.light-section > .container > .row.g-5.align-items-center > .story-copy {
+        flex: 0 0 60%;
+        width: 60%;
+        max-width: 60%;
+    }
+
+    .section-shell.light-section .story-image img {
+        max-width: 280px !important;
+        height: 320px !important;
+    }
+
+    .section-shell.light-section .story-copy h3 {
+        font-size: 2.2rem;
+    }
+
+    .section-shell.light-section .story-copy p {
+        font-size: .76rem;
+        line-height: 1.6;
+    }
+}
+
+/* MOBILE - KEEP IMAGE AND CONTENT BESIDE EACH OTHER */
+@media (max-width: 767.98px) {
+    .section-shell.light-section > .container > .row.g-5.align-items-center {
+        --bs-gutter-x: .75rem;
+        --bs-gutter-y: 0;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        width: 100%;
+    }
+
+    .section-shell.light-section > .container > .row.g-5.align-items-center > .story-image {
+        flex: 0 0 38% !important;
+        width: 38% !important;
+        max-width: 38% !important;
+        padding: 0 !important;
+    }
+
+    .section-shell.light-section > .container > .row.g-5.align-items-center > .story-copy {
+        flex: 0 0 62% !important;
+        width: 62% !important;
+        max-width: 62% !important;
+        padding: 0 !important;
+    }
+
+    .section-shell.light-section .story-image img {
+        width: 100% !important;
+        max-width: 150px !important;
+        height: 165px !important;
+        border-radius: 13px;
+        object-fit: cover;
+    }
+
+    .section-shell.light-section .story-copy .eyebrow {
+        font-size: .46rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    .section-shell.light-section .story-copy h3 {
+        max-width: 100% !important;
+        font-size: clamp(1.15rem, 5.5vw, 1.7rem) !important;
+        line-height: 1.05 !important;
+        margin: 0 0 8px !important;
+        letter-spacing: -.025em;
+    }
+
+    .section-shell.light-section .story-copy p {
+        max-width: 100% !important;
+        font-size: .55rem !important;
+        line-height: 1.45 !important;
+        margin: 0 0 7px !important;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .section-shell.light-section > .container > .row.g-5.align-items-center {
+        --bs-gutter-x: .5rem;
+    }
+
+    .section-shell.light-section > .container > .row.g-5.align-items-center > .story-image {
+        flex-basis: 36% !important;
+        width: 36% !important;
+        max-width: 36% !important;
+    }
+
+    .section-shell.light-section > .container > .row.g-5.align-items-center > .story-copy {
+        flex-basis: 64% !important;
+        width: 64% !important;
+        max-width: 64% !important;
+    }
+
+    .section-shell.light-section .story-image img {
+        max-width: 120px !important;
+        height: 135px !important;
+    }
+
+    .section-shell.light-section .story-copy h3 {
+        font-size: 1.22rem !important;
+    }
+
+    .section-shell.light-section .story-copy p {
+        font-size: .5rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* EXTRA SMALL */
+@media (max-width: 360px) {
+    .section-shell.light-section .story-image img {
+        max-width: 105px !important;
+        height: 120px !important;
+    }
+
+    .section-shell.light-section .story-copy h3 {
+        font-size: 1.08rem !important;
+    }
+
+    .section-shell.light-section .story-copy p {
+        font-size: .47rem !important;
+    }
+}
+/* ABOUT STORY - MOVE CONTENT CLOSER TO PICKLE */
+.section-shell.light-section > .container > .row.g-5.align-items-center {
+    column-gap: 0 !important;
+}
+
+.section-shell.light-section .story-image {
+    padding-right: 0 !important;
+}
+
+.section-shell.light-section .story-copy {
+    padding-left: 10px !important;
+    margin-left: -35px !important;
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+    .section-shell.light-section .story-copy {
+        padding-left: 5px !important;
+        margin-left: -15px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+    .section-shell.light-section .story-copy {
+        padding-left: 0 !important;
+        margin-left: -10px !important;
+    }
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.social-links a {
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    background: transparent;
+
+    font-size: 24px;
+
+    transition: all .25s ease;
+}
+
+.social-links a:hover {
+    background: #f2dcb8;
+    color: #0a3d2e;
+    border-color: #f2dcb8;
+    transform: translateY(-3px);
+}
+/* =========================================================
+   METRIC CARDS
+   SAME POSITION / SAME SIZE / CARD STYLE ONLY
+========================================================= */
+
+.metric {
+    background: #ffffff;
+
+    border: 1px solid rgba(10, 61, 46, 0.10);
+
+    border-radius: 16px;
+
+    padding: 1.2rem;
+
+    box-shadow: 0 8px 24px rgba(10, 61, 46, 0.06);
+
+    transition: transform .25s ease,
+                box-shadow .25s ease,
+                border-color .25s ease;
+}
+
+.metric:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(10, 61, 46, 0.10);
+
+    border-color: rgba(10, 61, 46, 0.16);
+}
+
+.metric strong {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.metric span {
+    display: block;
+    font-size: .65rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: rgba(10, 61, 46, .38);
+    margin-bottom: 10px;
+}
+
+.metric p {
+    margin: 0;
+    color: var(--ink);
+    font-size: .9rem;
+    line-height: 1.65;
+}
+/* =========================================================
+   PRODUCT INFO / METRIC AREA
+   LARGE + EXTRA LARGE
+========================================================= */
+
+.metric {
+    background: #ffffff;
+    border: 1px solid rgba(10, 61, 46, .10);
+    border-radius: 16px;
+
+    padding: 1.2rem;
+
+    height: 100%;
+    min-height: 190px;
+
+    box-shadow: 0 8px 24px rgba(10, 61, 46, .06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.metric:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 14px 30px rgba(10, 61, 46, .10);
+
+    border-color: rgba(10, 61, 46, .16);
+}
+
+.metric strong {
+    display: block;
+
+    font-size: 1.4rem;
+    line-height: 1.2;
+
+    margin-bottom: 5px;
+
+    color: var(--ink);
+}
+
+.metric span {
+    display: block;
+
+    font-size: .65rem;
+
+    text-transform: uppercase;
+    letter-spacing: .1em;
+
+    color: rgba(10, 61, 46, .38);
+
+    margin-bottom: 10px;
+}
+
+.metric p {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-size: .9rem;
+
+    line-height: 1.65;
+}
+/* =========================================================
+   LARGE / EXTRA LARGE SCREENS
+   SHOP BY FAMILY + 4 CARDS BESIDE IT
+========================================================= */
+
+@media (min-width: 992px) {
+
+    /* Left Shop By Family */
+    .section-shell.light-section .container > .row.g-4.mb-5 > .col-lg-4 {
+        width: 33.333333%;
+    }
+
+    /* Right Metrics */
+    .section-shell.light-section .container > .row.g-4.mb-5 > .col-lg-8 {
+        width: 66.666667%;
+    }
+
+    /* Keep four cards in 2 x 2 */
+    .section-shell.light-section .container > .row.g-4.mb-5 > .col-lg-8 > .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .section-shell.light-section .container > .row.g-4.mb-5 > .col-lg-8 > .row > .col-md-6 {
+        width: 50%;
+    }
+}
+/* =========================================================
+   FINAL FIX
+   SHOP BY FAMILY + 4 METRIC CARDS
+   LARGE / EXTRA LARGE
+========================================================= */
+
+@media (min-width: 992px) {
+
+    /* -----------------------------------------
+       MAIN ROW
+       LEFT = SHOP BY FAMILY
+       RIGHT = 4 METRIC CARDS
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5 {
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 2fr);
+
+        column-gap: 16px;
+        row-gap: 0;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+    }
+
+
+    /* -----------------------------------------
+       REMOVE BOOTSTRAP COLUMN WIDTHS
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-4 {
+
+        width: auto !important;
+        max-width: none !important;
+
+        flex: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        min-width: 0 !important;
+
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-8 {
+
+        width: auto !important;
+        max-width: none !important;
+
+        flex: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        min-width: 0 !important;
+
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+
+    /* -----------------------------------------
+       SHOP BY FAMILY CARD
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-4
+    > .info-card {
+
+        width: 100% !important;
+
+        height: 100% !important;
+
+        min-height: 0 !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* -----------------------------------------
+       RIGHT SIDE
+       4 CARDS = 2 × 2
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-8
+    > .row {
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        grid-template-rows:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+    }
+
+
+    /* -----------------------------------------
+       METRIC COLUMNS
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-8
+    > .row
+    > .col-md-6 {
+
+        width: auto !important;
+
+        max-width: none !important;
+
+        flex: none !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        min-width: 0 !important;
+
+        display: flex !important;
+    }
+
+
+    /* -----------------------------------------
+       METRIC CARD
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    .metric {
+
+        width: 100% !important;
+
+        height: 100% !important;
+
+        min-height: 0 !important;
+
+        margin: 0 !important;
+
+        padding: 20px 18px !important;
+
+        background: #ffffff !important;
+
+        border: 1px solid rgba(10, 61, 46, .10) !important;
+
+        border-radius: 16px !important;
+
+        box-shadow:
+            0 8px 24px rgba(10, 61, 46, .06) !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        justify-content: flex-start !important;
+    }
+
+
+    /* -----------------------------------------
+       METRIC TITLE
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    .metric strong {
+
+        display: block !important;
+
+        margin: 0 0 6px !important;
+
+        color: var(--ink) !important;
+
+        font-size: 1.45rem !important;
+
+        line-height: 1.15 !important;
+    }
+
+
+    /* -----------------------------------------
+       METRIC LABEL
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    .metric span {
+
+        display: block !important;
+
+        margin: 0 0 10px !important;
+
+        color: rgba(10, 61, 46, .42) !important;
+
+        font-size: .58rem !important;
+
+        line-height: 1.2 !important;
+
+        letter-spacing: .12em !important;
+
+        text-transform: uppercase !important;
+    }
+
+
+    /* -----------------------------------------
+       METRIC DESCRIPTION
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    .metric p {
+
+        margin: 0 !important;
+
+        color: var(--ink) !important;
+
+        font-size: .82rem !important;
+
+        line-height: 1.55 !important;
+    }
+
+
+    /* -----------------------------------------
+       HOVER
+    ----------------------------------------- */
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    .metric:hover {
+
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 14px 30px rgba(10, 61, 46, .10) !important;
+    }
+}
+
+
+/* =========================================================
+   EXTRA LARGE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5 {
+
+        column-gap: 18px;
+    }
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-8
+    > .row {
+
+        gap: 18px;
+    }
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    .metric {
+
+        padding: 22px 20px !important;
+    }
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    .metric strong {
+
+        font-size: 1.55rem !important;
+    }
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    .metric p {
+
+        font-size: .86rem !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   RESTORE NORMAL BOOTSTRAP LAYOUT
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5 {
+
+        display: flex !important;
+
+        flex-wrap: wrap !important;
+
+        margin-left: calc(-.75rem) !important;
+        margin-right: calc(-.75rem) !important;
+
+        width: auto !important;
+    }
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-4,
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-8 {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        flex: 0 0 100% !important;
+
+        padding-left: .75rem !important;
+        padding-right: .75rem !important;
+    }
+
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-8
+    > .row {
+
+        display: flex !important;
+
+        flex-wrap: wrap !important;
+
+        margin-left: -.75rem !important;
+        margin-right: -.75rem !important;
+    }
+
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-8
+    > .row
+    > .col-md-6 {
+
+        width: 50% !important;
+
+        max-width: 50% !important;
+
+        flex: 0 0 50% !important;
+
+        padding-left: .75rem !important;
+        padding-right: .75rem !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-8
+    > .row
+    > .col-md-6 {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        flex: 0 0 100% !important;
+    }
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    .metric {
+
+        min-height: 150px !important;
+    }
+}
+/* =========================================================
+   FOUR METRIC CARDS - NO EXTRA CARD
+========================================================= */
+
+.metric {
+    width: 100%;
+    height: 100%;
+
+    background: #fff;
+
+    border: 1px solid rgba(10, 61, 46, .10);
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    min-height: 190px;
+
+    box-shadow: 0 8px 24px rgba(10, 61, 46, .06);
+
+    transition: all .25s ease;
+}
+
+.metric:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 14px 30px rgba(10, 61, 46, .10);
+}
+
+.metric strong {
+    display: block;
+
+    color: var(--ink);
+
+    font-size: 1.5rem;
+
+    line-height: 1.2;
+
+    margin-bottom: 5px;
+}
+
+.metric span {
+    display: block;
+
+    color: rgba(10, 61, 46, .42);
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+.metric p {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-size: .84rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LARGE / EXTRA LARGE
+   2 × 2 CARDS
+========================================================= */
+
+@media (min-width: 992px) {
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5 {
+
+        display: grid !important;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+
+        margin: 0 !important;
+    }
+
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-md-6,
+    .section-shell.light-section
+    .container
+    > .row.g-4.mb-5
+    > .col-lg-6 {
+
+        width: auto !important;
+
+        max-width: none !important;
+
+        flex: none !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+    }
+
+    .metric {
+        min-height: 190px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .metric {
+        min-height: 160px;
+
+        padding: 20px;
+    }
+
+    .metric strong {
+        font-size: 1.3rem;
+    }
+
+    .metric p {
+        font-size: .75rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .metric {
+        min-height: 145px;
+
+        padding: 18px;
+    }
+
+    .metric strong {
+        font-size: 1.2rem;
+    }
+
+    .metric span {
+        font-size: .52rem;
+    }
+
+    .metric p {
+        font-size: .68rem;
+
+        line-height: 1.5;
+    }
+}
+/* =========================================================
+   ABOUT STORY - IPAD / TABLET FIX
+========================================================= */
+
+/* ---------- DESKTOP ---------- */
+
+@media (min-width: 1200px) {
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center {
+
+        display: grid !important;
+
+        grid-template-columns: 38% minmax(0, 62%);
+
+        column-gap: 35px;
+
+        align-items: center;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        --bs-gutter-x: 0 !important;
+        --bs-gutter-y: 0 !important;
+    }
+
+    .section-shell.light-section
+    .story-image {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+
+    .section-shell.light-section
+    .story-image img {
+
+        width: 100% !important;
+
+        max-width: 340px !important;
+
+        height: 360px !important;
+
+        object-fit: cover !important;
+
+        border-radius: 20px !important;
+
+        margin: 0 !important;
+    }
+
+    .section-shell.light-section
+    .story-copy {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        min-width: 0 !important;
+
+        overflow: hidden;
+    }
+
+    .section-shell.light-section
+    .story-copy h3 {
+
+        max-width: 620px !important;
+
+        margin: 0 0 18px !important;
+
+        font-size: clamp(2.2rem, 3.2vw, 3.1rem) !important;
+
+        line-height: 1.05 !important;
+    }
+
+    .section-shell.light-section
+    .story-copy p {
+
+        max-width: 620px !important;
+
+        font-size: .82rem !important;
+
+        line-height: 1.7 !important;
+
+        margin: 0 0 15px !important;
+    }
+}
+
+
+/* =========================================================
+   IPAD / TABLET
+   768px - 1199px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+
+    /* Main row */
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center {
+
+        display: grid !important;
+
+        grid-template-columns: 36% minmax(0, 64%) !important;
+
+        column-gap: 24px !important;
+
+        align-items: center !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        --bs-gutter-x: 0 !important;
+        --bs-gutter-y: 0 !important;
+    }
+
+
+    /* IMAGE COLUMN */
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center
+    > .story-image {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        padding: 0 !important;
+
+        margin: 0 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: flex-start !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* IMAGE */
+
+    .section-shell.light-section
+    .story-image img {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 250px !important;
+
+        height: 285px !important;
+
+        object-fit: cover !important;
+
+        object-position: center !important;
+
+        margin: 0 !important;
+
+        border-radius: 17px !important;
+    }
+
+
+    /* CONTENT COLUMN */
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center
+    > .story-copy {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        padding: 0 5px 0 0 !important;
+
+        margin: 0 !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        justify-content: center !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* SMALL LABEL */
+
+    .section-shell.light-section
+    .story-copy .eyebrow {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 0 8px !important;
+
+        font-size: .55rem !important;
+
+        line-height: 1.2 !important;
+    }
+
+
+    /* HEADING */
+
+    .section-shell.light-section
+    .story-copy h3 {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 540px !important;
+
+        margin: 0 0 14px !important;
+
+        font-family: 'Playfair Display', serif !important;
+
+        font-size: clamp(1.8rem, 3.1vw, 2.5rem) !important;
+
+        line-height: 1.08 !important;
+
+        letter-spacing: -.03em !important;
+
+        overflow-wrap: normal !important;
+
+        word-break: normal !important;
+    }
+
+
+    /* PARAGRAPHS */
+
+    .section-shell.light-section
+    .story-copy p {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 560px !important;
+
+        margin: 0 0 10px !important;
+
+        color: #667069 !important;
+
+        font-size: .70rem !important;
+
+        line-height: 1.55 !important;
+
+        overflow-wrap: break-word !important;
+
+        word-wrap: break-word !important;
+    }
+
+    .section-shell.light-section
+    .story-copy p:last-child {
+
+        margin-bottom: 0 !important;
+    }
+}
+
+
+/* =========================================================
+   IPAD PORTRAIT / SMALL TABLET
+   768px - 850px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 850px) {
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center {
+
+        grid-template-columns: 34% minmax(0, 66%) !important;
+
+        column-gap: 18px !important;
+    }
+
+    .section-shell.light-section
+    .story-image img {
+
+        max-width: 220px !important;
+
+        height: 260px !important;
+    }
+
+    .section-shell.light-section
+    .story-copy h3 {
+
+        font-size: 1.75rem !important;
+
+        line-height: 1.07 !important;
+
+        margin-bottom: 12px !important;
+    }
+
+    .section-shell.light-section
+    .story-copy p {
+
+        font-size: .64rem !important;
+
+        line-height: 1.5 !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center {
+
+        display: grid !important;
+
+        grid-template-columns: 34% minmax(0, 66%) !important;
+
+        column-gap: 12px !important;
+
+        align-items: center !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        --bs-gutter-x: 0 !important;
+        --bs-gutter-y: 0 !important;
+    }
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center
+    > .story-image {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        padding: 0 !important;
+
+        margin: 0 !important;
+    }
+
+    .section-shell.light-section
+    .story-image img {
+
+        width: 100% !important;
+
+        max-width: 115px !important;
+
+        height: 135px !important;
+
+        object-fit: cover !important;
+
+        border-radius: 12px !important;
+    }
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center
+    > .story-copy {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        padding: 0 !important;
+
+        margin: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+    .section-shell.light-section
+    .story-copy .eyebrow {
+
+        font-size: .42rem !important;
+
+        margin-bottom: 5px !important;
+    }
+
+    .section-shell.light-section
+    .story-copy h3 {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        font-size: 1.1rem !important;
+
+        line-height: 1.05 !important;
+
+        margin: 0 0 7px !important;
+    }
+
+    .section-shell.light-section
+    .story-copy p {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        font-size: .48rem !important;
+
+        line-height: 1.4 !important;
+
+        margin: 0 0 6px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center {
+
+        grid-template-columns: 35% minmax(0, 65%) !important;
+
+        column-gap: 9px !important;
+    }
+
+    .section-shell.light-section
+    .story-image img {
+
+        max-width: 105px !important;
+
+        height: 125px !important;
+    }
+
+    .section-shell.light-section
+    .story-copy h3 {
+
+        font-size: 1.05rem !important;
+    }
+
+    .section-shell.light-section
+    .story-copy p {
+
+        font-size: .46rem !important;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .section-shell.light-section
+    > .container
+    > .row.g-5.align-items-center {
+
+        grid-template-columns: 34% minmax(0, 66%) !important;
+
+        column-gap: 7px !important;
+    }
+
+    .section-shell.light-section
+    .story-image img {
+
+        max-width: 95px !important;
+
+        height: 112px !important;
+    }
+
+    .section-shell.light-section
+    .story-copy h3 {
+
+        font-size: 1rem !important;
+    }
+
+    .section-shell.light-section
+    .story-copy p {
+
+        font-size: .44rem !important;
+    }
 }
